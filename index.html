@@ -1,161 +1,183 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="DevOps assignment demo site: shows Git and Docker commands, screenshots checklist and submission guidance." />
-  <title>DevOps Assignment — Simple Web App</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="DevOps Assignment Report: Git and Docker" />
+    <title>DevOps Assignment Report — Harshwardhan Patil</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <div class="brand">
-      <div class="logo">DV</div>
-      <div>
-        <div style="font-weight:700">DevOps Assignment</div>
-        <div class="small">Static site to demonstrate Git & Docker workflows</div>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+      <div class="brand">
+        <div class="logo">DV</div>
+        <div>
+          <div style="font-weight:700">DevOps Assignment Report</div>
+          <div class="small">Software Development Practices — Version Control &amp; Containerization</div>
+        </div>
       </div>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <div class="container">
-    <div class="grid">
-      <main class="card">
-        <h1>Assignment-ready Web Page</h1>
-        <h2>What this page contains</h2>
-        <p class="small">This single-page summary is created to be part of your assignment submission. It contains the assignment requirements, short explanations, commands to run for Git and Docker, and helpful tips. Include this page in your project folder so the grader sees an explanation directly in the web app.</p>
+    <main id="main" class="container card">
+      <h1>DevOps Assignment Report</h1>
+      <p class="small">Course: Software Development Practices<br/>Assignment: Version Control (Git &amp; GitHub) and Containerization (Docker)</p>
 
-        <section style="margin-top:18px">
-          <h2>Assignment Requirements (condensed)</h2>
-          <ul class="points">
-            <li>Initialize a local Git repository with a simple static site (2–3 HTML pages).</li>
-            <li>Demonstrate Git commands: <code>git init</code>, <code>git status</code>, <code>git add</code>, <code>git commit</code>, <code>git log</code>, <code>git branch</code>, <code>git switch</code>.</li>
-            <li>Create a GitHub repo and push local repo to it.</li>
-            <li>Create a Docker image for the app, push it to Docker Hub, and run the container locally.</li>
-            <li>Compile screenshots and explanations into a single PDF and include source files in a zip.</li>
+      <h2>Student Details</h2>
+      <p><strong>Student Name:</strong> Harshwardhan Patil<br/>
+      <strong>BITS ID:</strong> 2023EBCS561</p>
+
+      <h2>Table of Contents</h2>
+      <ul>
+        <li>Question 1: Version Control using Git and GitHub
+          <ul>
+            <li>1.1. Local Git Repository Setup</li>
+            <li>1.2. Demonstration of Git Commands</li>
+            <li>1.3. GitHub Integration</li>
           </ul>
-        </section>
+        </li>
+        <li>Question 2: Docker Containerization
+          <ul>
+            <li>2.1. Custom Docker Image Creation</li>
+            <li>2.2. Building and Tagging Docker Image</li>
+            <li>2.3. Pushing Image to Docker Hub</li>
+            <li>2.4. Running the Container Locally</li>
+          </ul>
+        </li>
+        <li>Appendix
+          <ul>
+            <li>A. Command Reference</li>
+            <li>B. Folder Structure</li>
+          </ul>
+        </li>
+      </ul>
 
-        <section style="margin-top:18px">
-          <h2>Why include this page?</h2>
-          <p class="small">Adding an explanatory webpage improves clarity and makes your submission more creative and self-contained. It helps graders quickly verify the purpose of files and where to look for evidence (screenshots and commands).</p>
-        </section>
+      <h2>Question 1: Version Control using Git and GitHub (10 Marks)</h2>
+      <h3>1a. Local Git Repository Setup (2 Marks)</h3>
+      <p>A simple static web application with three HTML pages (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>) was created locally. The repository was initialized using <code>git init</code>.</p>
+      <p><strong>Commands used:</strong><br/>
+      <code>git init</code></p>
+      <p><strong>Explanation:</strong><br/>Initializes a new Git repository in the current directory, creating a <code>.git</code> folder that stores all version control metadata.</p>
 
-        <section style="margin-top:18px">
-          <h2>Quick run (local)</h2>
-          <p class="small">To preview this site locally without Docker, open <code>index.html</code> in your browser. To serve it with Python (simple HTTP server):</p>
-          <pre><code>python -m http.server 8080
-# then open http://localhost:8080/</code></pre>
-        </section>
+      <h3>1b. Demonstration of Git Commands (6 Marks)</h3>
+      <p>Below are the commands demonstrated on the initialized repository.</p>
+      <p><strong>Command:</strong> <code>git status</code><br/>
+      <strong>Explanation:</strong> Shows the current state of the working directory, including untracked and modified files.</p>
 
-        <section style="margin-top:18px">
-          <h2>Git commands (copy-and-run)</h2>
-          <div class="commands">
-            <div>
-              <pre><code># initialize repo
-git init
+      <p><strong>Command:</strong> <code>git add .</code><br/>
+      <strong>Explanation:</strong> Stages all modified and untracked files for the next commit.</p>
 
-# check status
+      <p><strong>Command:</strong> <code>git commit -m "Initial commit"</code><br/>
+      <strong>Explanation:</strong> Commits the staged files to the repository with a descriptive message.</p>
+
+      <p><strong>Command:</strong> <code>git branch</code> and <code>git switch</code><br/>
+      <strong>Explanation:</strong><br/>
+      <code>git branch feature-readme</code> creates a new branch.<br/>
+      <code>git switch feature-readme</code> moves to that branch.</p>
+
+      <p><strong>Command:</strong> <code>git log --oneline --graph</code><br/>
+      <strong>Explanation:</strong> Displays the commit history in a condensed graphical format.</p>
+
+      <p><strong>Command:</strong> <code>git switch main</code><br/>
+      <strong>Explanation:</strong> Switches back to the main branch after making changes in another branch.</p>
+
+      <p>Made the changes in <code>index.html</code>.</p>
+
+      <h3>1c. GitHub Integration (2 Marks)</h3>
+      <p>A remote repository was created on GitHub and linked to the local repository.</p>
+  <p><strong>Commands used:</strong><br/>
+  <code>git remote add origin https://github.com/etrama0/SGA2-software-development-practices-2023ebcs561.git</code><br/>
+  <code>git branch -M main</code><br/>
+  <code>git push -u origin main</code></p>
+
+      <p><strong>Explanation:</strong><br/>Adds the GitHub repository as a remote target (<code>origin</code>), renames the current branch to <code>main</code>, and pushes commits to the remote repository.</p>
+  <p><strong>Repository Link:</strong><br/>https://github.com/Etrama0/SGA2-software-development-practices-2023ebcs561</p>
+
+      <h2>Question 2: Docker Containerization (10 Marks)</h2>
+      <h3>2a. Custom Docker Image Creation (2 Marks)</h3>
+      <p>A custom Docker image was created to serve the static web application using Python’s built-in HTTP server.</p>
+      <p><strong>The Dockerfile used is shown below:</strong></p>
+      <pre><code>FROM python:3.11-slim
+WORKDIR /app
+COPY . /app
+EXPOSE 8080
+CMD ["python", "-m", "http.server", "8080", "--bind", "0.0.0.0"]</code></pre>
+
+      <p><strong>Explanation:</strong></p>
+      <ul class="points">
+        <li>Uses the lightweight Python 3.11 image.</li>
+        <li>Copies local files into the container’s <code>/app</code> directory.</li>
+        <li>Exposes port 8080 and runs a simple HTTP server serving static pages.</li>
+      </ul>
+
+      <p><em>Screenshot Placeholder:</em><br/>[Insert Screenshot 10: Display of Dockerfile contents in terminal or editor]</p>
+
+      <h3>2b. Building and Tagging Docker Image (2 Marks)</h3>
+      <p><strong>Commands used:</strong></p>
+      <pre><code>docker build -t etrama0/simple-web:1.0 .
+docker images</code></pre>
+
+      <p><strong>Explanation:</strong><br/>docker build creates a new image from the Dockerfile. The <code>-t</code> flag tags the image with a name and version tag.</p>
+      <p><em>Screenshot placeholders:</em> [Insert Docker build and images outputs]</p>
+
+      <h3>2c. Pushing Image to Docker Hub (3 Marks)</h3>
+      <p><strong>Commands used:</strong></p>
+      <pre><code>docker login
+docker push etrama0/simple-web:1.0</code></pre>
+
+      <p><strong>Explanation:</strong><br/>docker login authenticates to Docker Hub. docker push uploads the image layers to Docker Hub repository.</p>
+      <p><em>Screenshot placeholders:</em> [Insert docker login / docker push / Docker Hub page screenshots]</p>
+
+      <h3>2d. Running the Container Locally (3 Marks)</h3>
+      <p><strong>Commands used:</strong></p>
+      <pre><code>docker run --rm -d -p 8080:8080 --name my-simple-web etrama0/simple-web:1.0
+docker ps</code></pre>
+
+      <p><strong>Explanation:</strong><br/>Runs the container in detached mode (<code>-d</code>), mapping port 8080 on the host to port 8080 in the container. <code>docker ps</code> shows active containers.</p>
+      <p>To stop the container:</p>
+      <pre><code>docker stop my-simple-web</code></pre>
+
+      <h2>Appendix</h2>
+      <h3>A: Command Reference</h3>
+      <p><strong>Git Commands</strong></p>
+      <pre><code>git init
 git status
-
-# stage & commit
 git add .
-git commit -m "Initial commit: add static site and Dockerfile"</code></pre>
-            </div>
-            <div>
-              <pre><code># branches & log
+git commit -m "Initial commit"
+git log --oneline --graph
 git branch feature-readme
 git switch feature-readme
+git switch main
+git remote add origin &lt;GitHub URL&gt;
+git push -u origin main</code></pre>
 
-# compact log
-git log --oneline --decorate --graph --all</code></pre>
-            </div>
-          </div>
-        </section>
-
-        <section style="margin-top:18px">
-          <h2>Docker commands (build, run, push)</h2>
-          <pre><code># build image
-docker build -t YOUR_DOCKERHUB_USER/simple-web:1.0 .
-
-# run locally
-docker run --rm -d -p 8080:8080 --name my-simple-web YOUR_DOCKERHUB_USER/simple-web:1.0
-
-# push to Docker Hub
+      <p><strong>Docker Commands</strong></p>
+      <pre><code>docker build -t &lt;username&gt;/simple-web:1.0 .
+docker images
 docker login
-docker push YOUR_DOCKERHUB_USER/simple-web:1.0</code></pre>
-        </section>
+docker push &lt;username&gt;/simple-web:1.0
+docker run --rm -d -p 8080:8080 --name my-simple-web &lt;username&gt;/simple-web:1.0
+docker ps
+docker stop my-simple-web</code></pre>
 
-        <section style="margin-top:18px">
-          <h2>What to screenshot</h2>
-          <ul class="points">
-            <li>Terminal output for key Git commands (init, add, commit, log, branch, switch).</li>
-            <li>Successful <code>git push</code> to GitHub and the GitHub repo page.</li>
-            <li>Docker build output and <code>docker images</code> listing.</li>
-            <li>Docker Hub repository page showing the pushed image.</li>
-            <li>Browser screenshot of the running app (http://localhost:8080).</li>
-          </ul>
-        </section>
+      <h3>B: Folder Structure</h3>
+      <pre><code>devops-assignment/
+├── index.html
+├── about.html
+├── contact.html
+├── Dockerfile
+├── README.md
+└── DevOps_Assignment_Report.docx</code></pre>
 
-        <section style="margin-top:18px">
-          <h2>Submission checklist</h2>
-          <ul class="points">
-            <li>DevOps_Assignment_Report.pdf (screenshots + captions)</li>
-            <li>Source files: <code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>Dockerfile</code></li>
-            <li>Zip the folder: <code>devops-assignment_<yourname>.zip</code></li>
-            <li>Upload to Coursera assignment submission tab.</li>
-          </ul>
-        </section>
+    </main>
 
-      </main>
-
-      <aside class="card">
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div>
-            <div class="small">Author</div>
-            <div style="font-weight:700">Harshwardhan Patil</div>
-            <div class="small">University / Course</div>
-          </div>
-
-          <div>
-            <div class="small">Helpful tips</div>
-            <ul class="points">
-              <li>Trim/crop screenshots to remove sensitive data.</li>
-              <li>Use Docker Hub personal access tokens when prompted for CI or if password fails.</li>
-              <li>If GitHub rejects a push, use <code>git branch -M main</code> and push again.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="small">Quick links</div>
-            <div class="badges">
-              <div class="badge">Git</div>
-              <div class="badge">GitHub</div>
-              <div class="badge">Docker</div>
-              <div class="badge">Screenshots</div>
-            </div>
-          </div>
-
-          <div style="margin-top:12px">
-            <a class="cta" href="about.html">Read background & commands</a>
-          </div>
-          <div style="margin-top:10px">
-            <a class="badge" href="README.md" style="display:inline-block">README / Submission guide</a>
-          </div>
-        </div>
-      </aside>
-
-    </div>
-  </div>
-
-  <footer>
-    Created for DevOps assignment • Add this folder to your zip before submission
-  </footer>
-</body>
+    <footer>
+      Created for DevOps assignment
+    </footer>
+  </body>
 </html>

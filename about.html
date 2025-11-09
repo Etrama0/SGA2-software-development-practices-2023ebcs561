@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Detailed steps and commands for Git and Docker for the DevOps assignment." />
-  <title>About — DevOps Assignment</title>
+  <title>About — DevOps Assignment Report</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
     <div class="brand">
       <div class="logo">DV</div>
       <div>
-        <div style="font-weight:700">DevOps Assignment</div>
-        <div class="small">Background & commands</div>
+      <div style="font-weight:700">DevOps Assignment Report</div>
+        <div class="small">About</div>
       </div>
     </div>
     <nav>
@@ -26,73 +26,23 @@
 
   <main id="main" class="container card">
     <div class="wrap">
-      <div class="nav"><a href="index.html">← Home</a> | <a href="contact.html">Contact</a></div>
-    <h1>Background & Detailed Commands</h1>
-    <p>This page expands on the commands and steps you should capture as evidence when completing the assignment.</p>
+    <h1>About</h1>
+    <p>This project contains the DevOps Assignment Report for the course <em>Software Development Practices</em>. The full report and all required content are available on the main page (<a href="index.html">Report</a>).</p>
 
-    <h2>Initialize Git & create commits</h2>
-    <pre><code>git init
-git status
-git add .
-git commit -m "Initial commit: add static site and Dockerfile"
-</code></pre>
-    <p>Explain: <code>git init</code> creates the repository. <code>git add</code> stages, and <code>git commit</code> records snapshots. Use meaningful commit messages.</p>
-
-    <h2>Working with branches</h2>
-    <pre><code>git branch feature-readme
-git switch feature-readme
-# or
-# git switch -c feature-readme
-</code></pre>
-    <p>Explain: Branches let you experiment without changing <code>main</code>. Show a commit on the branch to demonstrate branching capability.</p>
-
-    <h2>Pushing to GitHub</h2>
-    <pre><code>git remote add origin https://github.com/YOUR_USERNAME/devops-assignment.git
-git branch -M main
-git push -u origin main
-</code></pre>
-    <p>Explain: Add the remote and push the local branch. Capture the terminal output and a screenshot of the GitHub repo page.</p>
-
-    <h2>Docker: build, run, push</h2>
-    <pre><code>docker build -t YOUR_DOCKERHUB_USER/simple-web:1.0 .
-docker images
-
-docker run --rm -d -p 8080:8080 --name my-simple-web YOUR_DOCKERHUB_USER/simple-web:1.0
-
-docker login
-docker push YOUR_DOCKERHUB_USER/simple-web:1.0
-</code></pre>
-    <p>Explain: <code>docker build</code> constructs the image. Running the container demonstrates that the image works. Pushing to Docker Hub stores layers remotely.</p>
-
-    <h2>Screenshots (placeholders)</h2>
-    <p>Put your captured screenshots in the <code>images/</code> folder and reference them here. For example:</p>
-    <figure>
-      <img src="images/git-init.png" alt="Screenshot: git init output" style="max-width:100%;border-radius:8px;display:block;margin-bottom:8px" />
-      <figcaption class="small">Screenshot 1 — Example: <code>git init</code> and <code>git status</code> output.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/docker-build.png" alt="Screenshot: docker build output" style="max-width:100%;border-radius:8px;display:block;margin-bottom:8px" />
-      <figcaption class="small">Screenshot 2 — Docker build & <code>docker images</code>.</figcaption>
-    </figure>
-
-    <h2>Report writing tips</h2>
+    <h2>Contents</h2>
     <ul>
-      <li>Keep each screenshot focused and add a one-line caption explaining the command and the outcome.</li>
-      <li>Name screenshots logically (e.g. <code>git-commit.png</code>, <code>docker-push.png</code>).</li>
+      <li>Full report (Git &amp; Docker steps) — see <a href="index.html">index.html</a></li>
+      <li>Placeholder images folder for screenshots: <code>images/</code></li>
+      <li>Dockerfile and README for build/run instructions</li>
     </ul>
 
-    <h2>What to write in the PDF report</h2>
-    <ul>
-      <li>For each screenshot, add a 1–2 line caption that explains what the screenshot demonstrates.</li>
-      <li>Include links to the GitHub repo and Docker Hub repo (public or shared).</li>
-      <li>Keep the PDF organized: Git section first, Docker section next, then final screenshots of the running site.</li>
-    </ul>
+    <p>Note: This page is intentionally minimal — the authoritative report content is included on <a href="index.html">index.html</a>.</p>
 
     </div>
   </main>
 
   <footer>
-    Created for DevOps assignment • Add this folder to your zip before submission
+    Created for DevOps assignment
   </footer>
 </body>
 </html>

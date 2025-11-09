@@ -4,5 +4,4 @@
 __pycache__/
 node_modules/
 *.log
-devops-assignment_*.zip
 *.zip

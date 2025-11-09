@@ -1,9 +1,6 @@
-FROM nginx:alpine
+FROM python:3.11-slim
 
-# Copy the static site into nginx html folder
-COPY . /usr/share/nginx/html
-
-# Expose default http port
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+COPY . /app
+EXPOSE 8080
+CMD ["python", "-m", "http.server", "8080", "--bind", "0.0.0.0"]
