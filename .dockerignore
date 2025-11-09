@@ -1,0 +1,8 @@
+# Ignore git metadata and common local files
+.git
+*.pyc
+__pycache__/
+node_modules/
+*.log
+devops-assignment_*.zip
+*.zip

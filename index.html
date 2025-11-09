@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="DevOps assignment demo site: shows Git and Docker commands, screenshots checklist and submission guidance." />
+  <title>DevOps Assignment — Simple Web App</title>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="brand">
+      <div class="logo">DV</div>
+      <div>
+        <div style="font-weight:700">DevOps Assignment</div>
+        <div class="small">Static site to demonstrate Git & Docker workflows</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <main class="card">
+        <h1>Assignment-ready Web Page</h1>
+        <h2>What this page contains</h2>
+        <p class="small">This single-page summary is created to be part of your assignment submission. It contains the assignment requirements, short explanations, commands to run for Git and Docker, and helpful tips. Include this page in your project folder so the grader sees an explanation directly in the web app.</p>
+
+        <section style="margin-top:18px">
+          <h2>Assignment Requirements (condensed)</h2>
+          <ul class="points">
+            <li>Initialize a local Git repository with a simple static site (2–3 HTML pages).</li>
+            <li>Demonstrate Git commands: <code>git init</code>, <code>git status</code>, <code>git add</code>, <code>git commit</code>, <code>git log</code>, <code>git branch</code>, <code>git switch</code>.</li>
+            <li>Create a GitHub repo and push local repo to it.</li>
+            <li>Create a Docker image for the app, push it to Docker Hub, and run the container locally.</li>
+            <li>Compile screenshots and explanations into a single PDF and include source files in a zip.</li>
+          </ul>
+        </section>
+
+        <section style="margin-top:18px">
+          <h2>Why include this page?</h2>
+          <p class="small">Adding an explanatory webpage improves clarity and makes your submission more creative and self-contained. It helps graders quickly verify the purpose of files and where to look for evidence (screenshots and commands).</p>
+        </section>
+
+        <section style="margin-top:18px">
+          <h2>Quick run (local)</h2>
+          <p class="small">To preview this site locally without Docker, open <code>index.html</code> in your browser. To serve it with Python (simple HTTP server):</p>
+          <pre><code>python -m http.server 8080
+# then open http://localhost:8080/</code></pre>
+        </section>
+
+        <section style="margin-top:18px">
+          <h2>Git commands (copy-and-run)</h2>
+          <div class="commands">
+            <div>
+              <pre><code># initialize repo
+git init
+
+# check status
+git status
+
+# stage & commit
+git add .
+git commit -m "Initial commit: add static site and Dockerfile"</code></pre>
+            </div>
+            <div>
+              <pre><code># branches & log
+git branch feature-readme
+git switch feature-readme
+
+# compact log
+git log --oneline --decorate --graph --all</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-top:18px">
+          <h2>Docker commands (build, run, push)</h2>
+          <pre><code># build image
+docker build -t YOUR_DOCKERHUB_USER/simple-web:1.0 .
+
+# run locally
+docker run --rm -d -p 8080:8080 --name my-simple-web YOUR_DOCKERHUB_USER/simple-web:1.0
+
+# push to Docker Hub
+docker login
+docker push YOUR_DOCKERHUB_USER/simple-web:1.0</code></pre>
+        </section>
+
+        <section style="margin-top:18px">
+          <h2>What to screenshot</h2>
+          <ul class="points">
+            <li>Terminal output for key Git commands (init, add, commit, log, branch, switch).</li>
+            <li>Successful <code>git push</code> to GitHub and the GitHub repo page.</li>
+            <li>Docker build output and <code>docker images</code> listing.</li>
+            <li>Docker Hub repository page showing the pushed image.</li>
+            <li>Browser screenshot of the running app (http://localhost:8080).</li>
+          </ul>
+        </section>
+
+        <section style="margin-top:18px">
+          <h2>Submission checklist</h2>
+          <ul class="points">
+            <li>DevOps_Assignment_Report.pdf (screenshots + captions)</li>
+            <li>Source files: <code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>Dockerfile</code></li>
+            <li>Zip the folder: <code>devops-assignment_<yourname>.zip</code></li>
+            <li>Upload to Coursera assignment submission tab.</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <aside class="card">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div class="small">Author</div>
+            <div style="font-weight:700">Harshwardhan Patil</div>
+            <div class="small">University / Course</div>
+          </div>
+
+          <div>
+            <div class="small">Helpful tips</div>
+            <ul class="points">
+              <li>Trim/crop screenshots to remove sensitive data.</li>
+              <li>Use Docker Hub personal access tokens when prompted for CI or if password fails.</li>
+              <li>If GitHub rejects a push, use <code>git branch -M main</code> and push again.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="small">Quick links</div>
+            <div class="badges">
+              <div class="badge">Git</div>
+              <div class="badge">GitHub</div>
+              <div class="badge">Docker</div>
+              <div class="badge">Screenshots</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <a class="cta" href="about.html">Read background & commands</a>
+          </div>
+          <div style="margin-top:10px">
+            <a class="badge" href="README.md" style="display:inline-block">README / Submission guide</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer>
+    Created for DevOps assignment • Add this folder to your zip before submission
+  </footer>
+</body>
+</html>
